@@ -1,7 +1,7 @@
 // =======================
 // Configure your backend URL here
 // =======================
-const API_BASE = localStorage.getItem("API_BASE") || "http://127.0.0.1:5001";
+const API_BASE = localStorage.getItem("API_BASE") || "https://donation-matcher.onrender.com"; 
 
 function setApiBase(url){
   localStorage.setItem("API_BASE", url);
