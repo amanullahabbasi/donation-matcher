@@ -1,53 +1,77 @@
+# 🌍 Donation Matcher — AI-Powered Disaster Relief Platform
 
-# Donation Matcher (Simple Full‑Stack Demo)
+**Donation Matcher** is an AI-powered web platform that connects **donors** with **people in need** during natural disasters such as floods and earthquakes.  
+It uses a **predictive scoring model** to prioritize and match victims based on their **income, assets, urgency, and required resources**, ensuring fair and transparent donation distribution.
 
-A minimal, presentation-ready project that shows how AI‑style scoring can prioritize people in need and match them with donors.
+---
 
-- **Backend:** Flask + SQLite + CORS (Python)
-- **Frontend:** Static HTML + Vanilla JS (fetch API)
-- **Scoring Logic:** urgency, income, asset ownership, and requested amount
-- **Public Demo:** Deploy backend to Render/Railway/Fly.io and frontend to Netlify/Vercel/GitHub Pages.
+## 🚀 Live Demo
 
-## Quick Start (Local)
+- **Frontend (Web UI):** [https://donation-matcher-1.onrender.com](https://donation-matcher-1.onrender.com)  
+- **Backend (Flask API):** [https://donation-matcher.onrender.com](https://donation-matcher.onrender.com)
 
-1) Backend
-```bash
-cd backend
-python -m venv .venv && source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-python app.py
-```
-This starts at http://127.0.0.1:5000
+---
 
-2) Frontend
-- Just open `frontend/index.html` in your browser, or serve it (recommended) with e.g.:
-```bash
-python -m http.server 8080 -d frontend
-```
-Then visit: http://localhost:8080
+## 💡 Project Overview
 
-3) Configure the frontend to point at your backend by changing `API_BASE` in `frontend/script.js`.
+This project demonstrates how **AI and data-based prediction** can make humanitarian aid smarter, faster, and more effective.  
+Donors input their available donation amount and resource type, while victims share their needs, income, and urgency level.  
+The system uses a simple but powerful algorithm to calculate a **priority score**, automatically matching donors and victims.
 
-## Deploy
+Example output:
+> “Ushba’s donation matched Amanullah Asim’s food need.”
 
-### Backend (Render)
-- Create a new Web Service from this `backend` folder.
-- Set **Start Command**: `gunicorn app:app`
-- Add environment variable `PYTHON_VERSION=3.11` (optional).
-- After deploy, copy your Render URL (e.g., https://your-app.onrender.com) and set it in `frontend/script.js` as `API_BASE`.
+---
 
-### Frontend (Netlify)
-- Drag & drop the `frontend` folder on Netlify, or set it as the publish directory in a new site.
-- Update `API_BASE` to your backend URL.
-- Done!
+## 🧩 Features
 
-## API Endpoints
+- 🧮 Predictive matching based on income, urgency, and resource type  
+- 💰 Real-time donor–victim matching  
+- 🌐 Fully hosted using Render (Flask backend + static frontend)  
+- 🔒 CORS-enabled secure API for communication  
+- 🧾 REST endpoints with clean JSON responses  
+- 🧠 Easily extendable for machine learning integration  
 
-- `POST /api/victims` — add a person in need
-- `POST /api/donors` — add a donor
-- `GET /api/victims` — list victims
-- `GET /api/donors` — list donors
-- `DELETE /api/reset` — wipe DB (demo convenience)
-- `GET /api/matches` — compute matches with scores
+---
 
-# donation-matcher
+## ⚙️ Tech Stack
+
+| Layer | Technology |
+|--------|-------------|
+| **Backend** | Python (Flask) |
+| **Frontend** | HTML, CSS, JavaScript |
+| **Hosting** | Render (Free Tier) |
+| **Data** | In-memory JSON storage (extendable to database) |
+| **AI Logic** | Simple rule-based scoring system |
+
+---
+
+## 🧠 How It Works
+
+1. **Victims** submit info such as name, income, has_home, amount_needed, and urgency.  
+2. **Donors** specify donation amount and resource type.  
+3. The backend calculates a **need score** based on urgency and financial status.  
+4. The app matches donors and victims, producing readable results:
+   > “Ushba’s donation matched Amanullah Asim’s food need.”
+
+---
+
+☁️ Deployment
+
+Backend: Flask API hosted on Render → https://donation-matcher.onrender.com
+
+Frontend: Static HTML/CSS/JS hosted on Render → https://donation-matcher-1.onrender.com
+
+Both communicate through secure fetch() API calls using CORS.
+
+🌱 Future Enhancements
+
+🤖 Integrate AI/ML regression models for smarter need prediction
+
+💾 Add persistent database (Firebase or PostgreSQL)
+
+🧾 Include user authentication for donors and victims
+
+📊 Build an admin dashboard to visualize donation flow
+
+📱 Add mobile-responsive design
