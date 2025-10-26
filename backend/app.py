@@ -10,6 +10,10 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/')
+def home():
+    return "Donation Matcher API is running!"
+
 DB_PATH = os.path.join(os.path.dirname(__file__), "data.db")
 
 def get_db():
@@ -192,6 +196,6 @@ def compute_matches():
     matches.sort(key=lambda m: m["victim"]["need_score"], reverse=True)
     return jsonify(matches)
 
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port, debug=True)
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
