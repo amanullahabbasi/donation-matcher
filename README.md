@@ -50,3 +50,4 @@ Then visit: http://localhost:8080
 - `DELETE /api/reset` — wipe DB (demo convenience)
 - `GET /api/matches` — compute matches with scores
 
+# donation-matcher
